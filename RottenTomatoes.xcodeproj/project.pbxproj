@@ -13,6 +13,7 @@
 		9CF4C2021AF9E122007047BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4C2001AF9E122007047BC /* LaunchScreen.xib */; };
 		9CF4C20E1AF9E122007047BC /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C20D1AF9E122007047BC /* RottenTomatoesTests.swift */; };
 		9CF4C2181AF9E1F0007047BC /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */; };
+		9CF4C21E1AFAAA85007047BC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C21D1AFAAA85007047BC /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9CF4C20C1AF9E122007047BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF4C20D1AF9E122007047BC /* RottenTomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RottenTomatoesTests.swift; sourceTree = "<group>"; };
 		9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		9CF4C21D1AFAAA85007047BC /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		9CF4C1F41AF9E122007047BC /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				9CF4C21C1AFAAA1D007047BC /* Views */,
 				9CF4C2191AF9E1F7007047BC /* View Controllers */,
 				9CF4C1F71AF9E122007047BC /* AppDelegate.swift */,
 				9CF4C1FB1AF9E122007047BC /* Main.storyboard */,
@@ -118,6 +121,14 @@
 				9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9CF4C21C1AFAAA1D007047BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CF4C21D1AFAAA85007047BC /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			files = (
 				9CF4C1F81AF9E122007047BC /* AppDelegate.swift in Sources */,
 				9CF4C2181AF9E1F0007047BC /* MoviesViewController.swift in Sources */,
+				9CF4C21E1AFAAA85007047BC /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +435,7 @@
 				9CF4C2131AF9E122007047BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CF4C2141AF9E122007047BC /* Build configuration list for PBXNativeTarget "RottenTomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +444,7 @@
 				9CF4C2161AF9E122007047BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
