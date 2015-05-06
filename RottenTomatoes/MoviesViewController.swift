@@ -61,9 +61,11 @@ extension MoviesViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
     let movie = movies![indexPath.row]
-    
+    let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+  
     cell.titleLabel?.text = movie["title"] as? String
     cell.synopsisLabel?.text = movie["synopsis"] as? String
+    cell.posterView.setImageWithURL(url)
     
     return cell
   }

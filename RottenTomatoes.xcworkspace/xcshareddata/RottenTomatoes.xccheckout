@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>32F58F16-5E5B-47B3-A84C-6C20B94F9CC3</string>
+	<string>D3E2F184-63B7-4366-9B87-D4B4513CEF26</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>RottenTomatoes</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6C11A68C67F217E0A8B20505A723A3E6B7C3E777</key>
 		<string>https://github.com/ibari/RottenTomatoes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RottenTomatoes.xcodeproj/project.xcworkspace</string>
+	<string>RottenTomatoes.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6C11A68C67F217E0A8B20505A723A3E6B7C3E777</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ibari/RottenTomatoes.git</string>
