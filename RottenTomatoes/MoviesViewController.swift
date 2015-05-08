@@ -12,12 +12,17 @@ class MoviesViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var movies: [NSDictionary]?
+  var refreshControl: UIRefreshControl!
   
   override func viewDidLoad() {    
     super.viewDidLoad()
     
     let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")!
     let request = NSURLRequest(URL: url)
+    
+    refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+    tableView.insertSubview(refreshControl, atIndex: 0)
     
     MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     
@@ -33,6 +38,21 @@ class MoviesViewController: UIViewController {
       self.tableView.dataSource = self
       self.tableView.delegate = self
     }
+  }
+  
+  func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+      dispatch_time(
+        DISPATCH_TIME_NOW,
+        Int64(delay * Double(NSEC_PER_SEC))
+      ),
+      dispatch_get_main_queue(), closure)
+  }
+  
+  func onRefresh() {
+    delay(2, closure: {
+      self.refreshControl.endRefreshing()
+    })
   }
   
   override func didReceiveMemoryWarning() {
