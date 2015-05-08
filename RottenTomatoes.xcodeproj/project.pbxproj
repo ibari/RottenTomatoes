@@ -14,7 +14,7 @@
 		9CF4C20E1AF9E122007047BC /* RottenTomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C20D1AF9E122007047BC /* RottenTomatoesTests.swift */; };
 		9CF4C2181AF9E1F0007047BC /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */; };
 		9CF4C21E1AFAAA85007047BC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C21D1AFAAA85007047BC /* MovieCell.swift */; };
-		EA07F1AB062EB175DA11F7E4 /* libPods-RottenTomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF978EF264A1B2000879960 /* libPods-RottenTomatoes.a */; };
+		EA07F1AB062EB175DA11F7E4 /* libPods-RottenTomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF978EF264A1B2000879960 /* libPods-RottenTomatoes.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,6 +432,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RottenTomatoes/RottenTomatoes-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,6 +450,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RottenTomatoes/RottenTomatoes-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
