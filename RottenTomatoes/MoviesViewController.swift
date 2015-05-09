@@ -34,7 +34,8 @@ class MoviesViewController: UIViewController {
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, requestError: NSError!) -> Void in
       
       if let requestError = requestError {
-        println("Error: \(requestError.localizedDescription)")
+        let alertController = UIAlertController(title: "Error", message: requestError.localizedDescription, preferredStyle: .Alert)
+        self.presentViewController(alertController, animated: true, completion: nil)
       } else {
         let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
         
@@ -42,8 +43,6 @@ class MoviesViewController: UIViewController {
           self.movies = json["movies"] as? [NSDictionary]
           self.tableView.reloadData()
           MBProgressHUD.hideHUDForView(self.view, animated: true)
-        } else {
-          println("Error: NSJSONSerialization")
         }
         
         self.tableView.dataSource = self
