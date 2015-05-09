@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let resourceUrl = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")!
+
 class MoviesViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
@@ -17,27 +19,37 @@ class MoviesViewController: UIViewController {
   override func viewDidLoad() {    
     super.viewDidLoad()
     
-    let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")!
-    let request = NSURLRequest(URL: url)
+    getMovies()
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
     tableView.insertSubview(refreshControl, atIndex: 0)
+  }
+  
+  func getMovies() {
+    let request = NSURLRequest(URL: resourceUrl)
     
     MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     
-    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-      let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
+    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, requestError: NSError!) -> Void in
       
-      if let json = json {
-        self.movies = json["movies"] as? [NSDictionary]
-        self.tableView.reloadData()
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+      if let requestError = requestError {
+        println("Error: \(requestError.localizedDescription)")
+      } else {
+        let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
+        
+        if let json = json {
+          self.movies = json["movies"] as? [NSDictionary]
+          self.tableView.reloadData()
+          MBProgressHUD.hideHUDForView(self.view, animated: true)
+        } else {
+          println("Error: NSJSONSerialization")
+        }
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
       }
-      
-      self.tableView.dataSource = self
-      self.tableView.delegate = self
-    }
+    })
   }
   
   func delay(delay:Double, closure:()->()) {
@@ -60,15 +72,14 @@ class MoviesViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  /*
   // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+    let cell = sender as! UITableViewCell
+    let indexPath = tableView.indexPathForCell(cell)!
+    
+    let movieDetailsViewController = segue.destinationViewController as! MovieDetailsViewController
+    movieDetailsViewController.movie = movies![indexPath.row]
   }
-  */
 }
 
 // MARK: - UITableViewDataSource
@@ -82,15 +93,19 @@ extension MoviesViewController: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
+    var cell = tableView.dequeueReusableCellWithIdentifier("com.codepath.MovieCell", forIndexPath: indexPath) as! MovieCell
     let movie = movies![indexPath.row]
-    let url = NSURL(string: movie.valueForKeyPath("posters.original") as! String)!
+    let imageUrl = NSURL(string: movie.valueForKeyPath("posters.original") as! String)!
   
     cell.titleLabel?.text = movie["title"] as? String
     cell.synopsisLabel?.text = movie["synopsis"] as? String
-    cell.posterView.setImageWithURL(url)
+    cell.posterView.setImageWithURL(imageUrl)
     
     return cell
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4929C81AFDBE2100F2D601 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */; };
 		9CF4C1F81AF9E122007047BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C1F71AF9E122007047BC /* AppDelegate.swift */; };
 		9CF4C1FD1AF9E122007047BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4C1FB1AF9E122007047BC /* Main.storyboard */; };
 		9CF4C1FF1AF9E122007047BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4C1FE1AF9E122007047BC /* Images.xcassets */; };
@@ -32,6 +33,7 @@
 		6F516B584417754D3429F7E8 /* Pods-RottenTomatoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RottenTomatoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RottenTomatoes/Pods-RottenTomatoes.debug.xcconfig"; sourceTree = "<group>"; };
 		8FF978EF264A1B2000879960 /* libPods-RottenTomatoes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RottenTomatoes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C372DDD1AFABF500057AFDB /* RottenTomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RottenTomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		9CF4C1F21AF9E122007047BC /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF4C1F61AF9E122007047BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF4C1F71AF9E122007047BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */,
+				9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4929C81AFDBE2100F2D601 /* MovieDetailsViewController.swift in Sources */,
 				9CF4C1F81AF9E122007047BC /* AppDelegate.swift in Sources */,
 				9CF4C2181AF9E1F0007047BC /* MoviesViewController.swift in Sources */,
 				9CF4C21E1AFAAA85007047BC /* MovieCell.swift in Sources */,
