@@ -34,8 +34,11 @@ class MoviesViewController: UIViewController {
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse!, data: NSData!, requestError: NSError!) -> Void in
       
       if let requestError = requestError {
-        let alertController = UIAlertController(title: "Error", message: requestError.localizedDescription, preferredStyle: .Alert)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        let alertViewController = self.storyboard!.instantiateViewControllerWithIdentifier("Alert.storyboard") as! AlertViewController
+        alertViewController.alertTitle = "Network Error"
+        alertViewController.alertMessage = requestError.localizedDescription
+        self.presentViewController(alertViewController, animated: true, completion: nil)
+        
       } else {
         let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
         

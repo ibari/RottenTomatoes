@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C4929C81AFDBE2100F2D601 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */; };
+		9C4929CA1AFE99CB00F2D601 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4929C91AFE99CB00F2D601 /* AlertViewController.swift */; };
+		9C4929CC1AFEE67D00F2D601 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C4929CB1AFEE67D00F2D601 /* fontawesome-webfont.ttf */; };
 		9CF4C1F81AF9E122007047BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4C1F71AF9E122007047BC /* AppDelegate.swift */; };
 		9CF4C1FD1AF9E122007047BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4C1FB1AF9E122007047BC /* Main.storyboard */; };
 		9CF4C1FF1AF9E122007047BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4C1FE1AF9E122007047BC /* Images.xcassets */; };
@@ -34,6 +36,8 @@
 		8FF978EF264A1B2000879960 /* libPods-RottenTomatoes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RottenTomatoes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C372DDD1AFABF500057AFDB /* RottenTomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RottenTomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		9C4929C91AFE99CB00F2D601 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		9C4929CB1AFEE67D00F2D601 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "../../../Downloads/font-awesome-4.3.0/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		9CF4C1F21AF9E122007047BC /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF4C1F61AF9E122007047BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF4C1F71AF9E122007047BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		9CF4C1E91AF9E122007047BC = {
 			isa = PBXGroup;
 			children = (
+				9C4929CB1AFEE67D00F2D601 /* fontawesome-webfont.ttf */,
 				9CF4C1F41AF9E122007047BC /* RottenTomatoes */,
 				9CF4C20A1AF9E122007047BC /* RottenTomatoesTests */,
 				9CF4C1F31AF9E122007047BC /* Products */,
@@ -140,6 +145,7 @@
 			children = (
 				9CF4C2171AF9E1F0007047BC /* MoviesViewController.swift */,
 				9C4929C71AFDBE2100F2D601 /* MovieDetailsViewController.swift */,
+				9C4929C91AFE99CB00F2D601 /* AlertViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF4C1FD1AF9E122007047BC /* Main.storyboard in Resources */,
+				9C4929CC1AFEE67D00F2D601 /* fontawesome-webfont.ttf in Resources */,
 				9CF4C2021AF9E122007047BC /* LaunchScreen.xib in Resources */,
 				9CF4C1FF1AF9E122007047BC /* Images.xcassets in Resources */,
 			);
@@ -298,6 +305,7 @@
 				9C4929C81AFDBE2100F2D601 /* MovieDetailsViewController.swift in Sources */,
 				9CF4C1F81AF9E122007047BC /* AppDelegate.swift in Sources */,
 				9CF4C2181AF9E1F0007047BC /* MoviesViewController.swift in Sources */,
+				9C4929CA1AFE99CB00F2D601 /* AlertViewController.swift in Sources */,
 				9CF4C21E1AFAAA85007047BC /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
